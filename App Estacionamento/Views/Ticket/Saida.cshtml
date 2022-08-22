@@ -1,0 +1,121 @@
+﻿@model App_Estacionamento.Models.Ticket
+@{
+    ViewData["Title"] = "Saída";
+}
+
+<br />
+<div class="text-center">
+    <h1>Saída de veículo</h1>
+</div>
+    
+<div class="col-md-6 offset-md-3">
+    <form asp-action="BtnCheckOut">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>    
+
+        @if(Model.Id == null || Model.Id == 0)
+        {
+            <div class="form-group row mt-4">
+                <label asp-for="Id" class="col-sm-2 col-form-label h5">TICKET:</label>
+                <div class="col-sm-10">
+                    <select asp-for="Id" class="form-control" asp-items="ViewBag.Tickets" name="Id" id="IdSelect">
+                        <option selected="selected">Selecione o ticket</option>
+                    </select>
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+            </div>   
+        } else
+        {
+            <div class="form-group row mt-4">
+                <label asp-for="Id" class="col-sm-2 col-form-label h5">TICKET:</label>
+                <div class="col-sm-10">
+                    <input asp-for="Id" class="form-control rounded" readonly/>
+                    <span asp-validation-for="Id" class="text-danger"></span> 
+                </div>        
+            </div>
+        }
+        
+        <div class="form-group row mt-4">
+            <label asp-for="Cliente" class="col-sm-2 col-form-label h5">CLIENTE:</label>
+            <div class="col-sm-10">
+                <input asp-for="Cliente" class="form-control rounded" readonly/>
+                <span asp-validation-for="Cliente" class="text-danger"></span>
+            </div>                
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Placa" class="col-sm-2 col-form-label h5">PLACA:</label>
+            <div class="col-sm-10">
+                <input asp-for="Placa" class="form-control" readonly/>
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Veiculo" class="col-sm-2 col-form-label h5">VEÍCULO:</label>
+            <div class="col-sm-10">
+                <input asp-for="Veiculo" class="form-control" readonly/>
+                <span asp-validation-for="Veiculo" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Entrada" class="col-sm-2 col-form-label h5">ENTRADA:</label>
+            <div class="col-sm-10">
+                <input asp-for="Entrada" type="text" class="form-control entradamask" readonly/>
+                <span asp-validation-for="Entrada" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Saida" class="col-sm-2 col-form-label h5">SAÍDA:</label>
+            <div class="col-sm-10">
+                <input asp-for="Saida" type="text" class="form-control saidamask" readonly/>
+                <span asp-validation-for="Saida" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Tempo" class="col-sm-2 col-form-label h5">TEMPO:</label>
+            <div class="col-sm-10">
+                <input asp-for="Tempo" type="time" class="form-control tempomask" readonly/>
+                <span asp-validation-for="Tempo" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Valor" class="col-sm-2 col-form-label h5">VALOR:</label>
+            <div class="col-sm-10">
+                <input asp-for="Valor" type="number" class="form-control" id="valor" readonly/>
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="ValorTotal" class="col-sm-2 col-form-label h5">VALOR TOTAL:</label>
+            <div class="col-sm-10">
+                <input asp-for="ValorTotal" type="number" class="form-control" id="valor" readonly/>
+                <span asp-validation-for="ValorTotal" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group d-flex justify-content-center mt-3">
+            <a asp-action="Abertos" class="btn btn-danger m-3 mt-4">CANCELAR</a>
+            <input type="submit" value="  CHECK-OUT  " class="btn btn-success m-3 mt-4" />                
+        </div>
+
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.entradamask').mask('00/00/0000 00:00');
+            $('.saidamask').mask('00/00/0000 00:00');
+            $('.tempomask').mask('00:00');
+            $('#valor').maskMoney({ decimal: "," });
+            $("#IdSelect").chosen({ width: "100%" });
+        });
+    </script>
+}

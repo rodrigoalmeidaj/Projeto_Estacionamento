@@ -1,0 +1,94 @@
+﻿@model App_Estacionamento.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalhes cliente";
+}
+
+<br />
+<div class="text-center">
+    <h1>Detalhes do Cliente</h1>
+</div>
+
+<div>
+    <hr />
+    <div class="col-md-10 offset-md-5">
+        <dl class="row">
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Cpf)
+            </dt>
+            <dd class = "col-sm-10 cpfMask">
+                @Html.DisplayFor(model => model.Cpf)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Nascimento)
+            </dt>
+            <dd class = "col-sm-10 dataMask">
+                @Html.DisplayFor(model => model.Nascimento)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Telefone)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Telefone)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Logradouro)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Logradouro)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Numero)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Numero)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Veiculo)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Veiculo)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class = "col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class = "col-sm-2">
+                @Html.DisplayNameFor(model => model.DataCadastro)
+            </dt>
+            <dd class = "col-sm-10 dataMask">
+                @Html.DisplayFor(model => model.DataCadastro)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div>
+    @Html.ActionLink("Editar", "EditarCliente", new { id = Model.Id})
+    <a asp-action="ListarClientes">Voltar</a>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.dataMask').mask('00/00/0000');
+        });
+        $(document).ready(function () {
+            $('.cpfMask').mask('000.000.000-00');
+        });     
+    </script>
+}

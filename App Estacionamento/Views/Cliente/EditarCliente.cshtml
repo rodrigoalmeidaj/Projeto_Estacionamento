@@ -1,0 +1,113 @@
+﻿@model App_Estacionamento.Models.Cliente
+
+@{
+    ViewData["Title"] = "Editar cliente";
+}
+<br />
+<div class="text-center">
+    <h1>Editar Cliente</h1>
+</div>
+
+<div class="col-md-6 offset-md-3">
+    <form asp-action="BtnEditarCliente">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group" hidden>
+            <label asp-for="Id" class="control-label"></label>
+            <input asp-for="Id" class="form-control" />
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Nome" class="col-sm-2 col-form-label h5">NOME:</label>
+            <div class="col-sm-10">
+                <input asp-for="Nome" class="form-control rounded" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>                
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Cpf" class="col-sm-2 col-form-label h5">CPF:</label>
+            <div class="col-sm-10">
+                <input asp-for="Cpf" type="text" class="form-control rounded"/>
+                <span asp-validation-for="Cpf" class="text-danger"></span>
+            </div>                
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Nascimento" class="col-sm-2 col-form-label h5">NASCIMENTO:</label>
+            <div class="col-sm-10">
+                <input asp-for="Nascimento" class="form-control rounded dataMask" type="txt" placeholder="dd/mm/aaaa"/>
+                <span asp-validation-for="Nascimento" class="text-danger"></span>
+            </div>                
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Telefone" class="col-sm-2 col-form-label h5">TELEFONE:</label>
+            <div class="col-sm-10">
+                <input asp-for="Telefone" class="form-control rounded" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>                
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Logradouro" class="col-sm-2 col-form-label h5 ">LOGRADOURO:</label>
+            <div class="col-sm-10">
+                <input asp-for="Logradouro" class="form-control rounded" />
+                <span asp-validation-for="Logradouro" class="text-danger"></span>
+            </div>                
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Numero" class="col-sm-2 col-form-label h5">NÚMERO:</label>
+            <div class="col-sm-10">
+                <input asp-for="Numero" class="form-control rounded" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>                
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Veiculo" class="col-sm-2 col-form-label h5">VEÍCULO:</label>
+            <div class="col-sm-10">
+                <input asp-for="Veiculo" class="form-control rounded" />
+                <span asp-validation-for="Veiculo" class="text-danger"></span>
+            </div>                
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Email" class="col-sm-2 col-form-label h5">EMAIL:</label>
+            <div class="col-sm-10">
+                <input asp-for="Email" class="form-control rounded" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>                
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="DataCadastro" class="col-sm-2 col-form-label h5">DATA DE CADASTRO:</label>
+            <div class="col-sm-10">
+                <input asp-for="DataCadastro" type="text" class="form-control rounded" readonly/>
+                <span asp-validation-for="DataCadastro" class="text-danger"></span>
+            </div>                
+        </div>
+
+        <div class="form-group d-flex justify-content-center mt-3">
+            <a asp-action="ListarCLientes" class="btn btn-danger m-3 mt-4">VOLTAR</a>
+            <input type="submit" value="SALVAR" class="btn btn-success m-3 mt-4" />             
+        </div>
+        
+        @*<div class="form-group">
+            <input type="submit" value="Salvar" class="btn btn-primary" />
+        </div>*@
+    </form>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.dataMask').mask('00/00/0000');
+        });
+        $(document).ready(function () {
+            $('.cpfMask').mask('000.000.000-00');
+        });     
+    </script>
+}
+

@@ -1,0 +1,22 @@
+html {
+    font-size: 14px;
+    background-color: #eef4ff;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+        background-color: #eef4ff;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    background-color: #eef4ff;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #eef4ff;
+}

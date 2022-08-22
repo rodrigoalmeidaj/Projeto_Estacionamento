@@ -1,0 +1,90 @@
+[33mcommit 733e71a7a08997593fc76cd3d1e3d04726a1f932[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: ad08d5e 53a0ec3
+Author: RODRIGO JOSE DE ALMEIDA <10612406652>
+Date:   Mon Jun 6 19:52:59 2022 -0300
+
+    Merge branch 'main' of https://dev.azure.com/leandrovilarinho2002/Estacionamento%20-%20Projeto%20Orientado/_git/EstacionamentoWeb
+
+[33mcommit ad08d5e453a3c665027e343e1c3c4fafc9843929[m
+Author: RODRIGO JOSE DE ALMEIDA <10612406652>
+Date:   Mon Jun 6 19:52:16 2022 -0300
+
+    Inclusao da documentação do metodo da tela de entrada
+
+[33mcommit 53a0ec34093fd8655b765470d9677f25137af64f[m
+Author: CARLOS EDUARDO CASTELIANO DE PAULA <10982858671>
+Date:   Mon Jun 6 19:49:01 2022 -0300
+
+    Teste Carlos
+
+[33mcommit f4db1477b608a26a0b207304389eefa99135b391[m
+Author: Castelianoads <carlosecdpaula@gmail.com>
+Date:   Sun Jun 5 23:37:50 2022 -0300
+
+    Implementação de autorização
+
+[33mcommit cabd1a2de82454b3922bdf4b78294e8bd5ca3630[m
+Author: Castelianoads <carlosecdpaula@gmail.com>
+Date:   Sun Jun 5 23:15:34 2022 -0300
+
+    Alterações páginas tickets
+
+[33mcommit e5ab0046893b0e9fa1eb7202c20ddb67a3a70462[m
+Author: Castelianoads <carlosecdpaula@gmail.com>
+Date:   Sun Jun 5 15:40:55 2022 -0300
+
+    Alteração controllers e views de cliente
+
+[33mcommit a80aa3d4240025a588ebf80a994f2bfbb66aacd1[m
+Author: Castelianoads <carlosecdpaula@gmail.com>
+Date:   Sat Jun 4 19:26:03 2022 -0300
+
+    Alteração controllers e views de cliente
+
+[33mcommit 1f4b147cb7b0a7cd6e89fb9d4dfc924048e8c160[m
+Author: Castelianoads <carlosecdpaula@gmail.com>
+Date:   Sat Jun 4 16:50:23 2022 -0300
+
+    Alteração layout das páginas
+
+[33mcommit 84903633d1fda0a81c6cb76e98c17a8922b92705[m
+Author: Castelianoads <carlosecdpaula@gmail.com>
+Date:   Sat Jun 4 16:41:20 2022 -0300
+
+    Implementação modulo login
+
+[33mcommit 724e3f0e5546759cf5a91848c06d736936e9b413[m
+Author: RODRIGO JOSE DE ALMEIDA <10612406652>
+Date:   Mon May 23 21:43:22 2022 -0300
+
+    teste no iftm
+
+[33mcommit 92d787c48af485c367c2a8db59df4ff340405f45[m
+Author: Castelianoads <carlosecdpaula@gmail.com>
+Date:   Mon May 23 00:13:53 2022 -0300
+
+    Correções de beck-end Ticket
+
+[33mcommit ccdbc1545c9c790fb4fc3125e85ae7ff236c8f08[m
+Author: Castelianoads <carlosecdpaula@gmail.com>
+Date:   Sun May 22 17:47:43 2022 -0300
+
+    Implantação DataTables na pagina Abertos
+
+[33mcommit 76abec344db662e7b074bb22723e54bc44c6794b[m
+Author: Castelianoads <carlosecdpaula@gmail.com>
+Date:   Sun May 22 16:28:20 2022 -0300
+
+    Refatoração views ticket
+
+[33mcommit 4c7af3ae557984caf37d0df30452a530a71ceaa1[m
+Author: Castelianoads <carlosecdpaula@gmail.com>
+Date:   Sun May 22 15:52:50 2022 -0300
+
+    Inclusao do Projeto novamente
+
+[33mcommit c05dd8225dbe316ac23a61cf74b9d378aac0bb3f[m
+Author: Carlos Eduardo Casteliano de Paula <carlosppaula2008@gmail.com>
+Date:   Sun May 22 18:48:01 2022 +0000
+
+    Added README.md, .gitignore (VisualStudio) files

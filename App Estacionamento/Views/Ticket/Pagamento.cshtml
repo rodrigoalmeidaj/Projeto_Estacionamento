@@ -1,0 +1,142 @@
+﻿@model App_Estacionamento.Models.Ticket
+@{
+    ViewData["Title"] = "Pagamento";
+}
+
+<br />
+<div class="text-center">
+    <h1>Pagamento</h1>
+</div>
+
+<div class="col-md-6 offset-md-3">
+        
+    <form asp-action="SalvarPagamento">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div> 
+
+        <div class="form-group row mt-4">
+            <label asp-for="Id" class="col-sm-2 col-form-label h5">TICKET:</label>
+            <div class="col-sm-10">
+                <input asp-for="Id" class="form-control rounded" readonly/>
+            </div>  
+            <div class="col-sm-10">
+                @*<select asp-for="Id" class="form-control" asp-items="ViewBag.Ticketss" name="Id" id="Id">
+                    <option selected="selected">Selecione o ticket</option>
+                </select>
+                <span asp-validation-for="Id" class="text-danger"></span>*@
+            </div>                
+        </div>
+        
+        <div class="form-group row mt-4">
+            <label asp-for="Cliente" class="col-sm-2 col-form-label h5">CLIENTE:</label>
+            <div class="col-sm-10">
+                <input asp-for="Cliente" class="form-control rounded" readonly/>
+                <span asp-validation-for="Cliente" class="text-danger"></span>
+            </div>                
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Placa" class="col-sm-2 col-form-label h5">PLACA:</label>
+            <div class="col-sm-10">
+                <input asp-for="Placa" class="form-control" readonly/>
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Veiculo" class="col-sm-2 col-form-label h5">VEÍCULO:</label>
+            <div class="col-sm-10">
+                <input asp-for="Veiculo" class="form-control" readonly/>
+                <span asp-validation-for="Veiculo" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Entrada" class="col-sm-2 col-form-label h5">ENTRADA:</label>
+            <div class="col-sm-10">
+                <input asp-for="Entrada" class="form-control" readonly/>
+                <span asp-validation-for="Entrada" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Saida" class="col-sm-2 col-form-label h5">SAÍDA:</label>
+            <div class="col-sm-10">
+                <input asp-for="Saida" class="form-control" readonly/>
+                <span asp-validation-for="Saida" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Tempo" class="col-sm-2 col-form-label h5">TEMPO:</label>
+            <div class="col-sm-10">
+                <input asp-for="Tempo" type="time" class="form-control tempomask" readonly/>
+                <span asp-validation-for="Tempo" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Valor" class="col-sm-2 col-form-label h5">VALOR:</label>
+            <div class="col-sm-10">
+                <input asp-for="Valor" class="form-control" id="valor"/>
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="Desconto" class="col-sm-2 col-form-label h5">DESCONTO:</label>
+            <div class="col-sm-10">
+                <input asp-for="Desconto" class="form-control" id="valor"/>
+                <span asp-validation-for="Desconto" class="text-danger"></span>
+            </div>                 
+        </div>
+
+        <div class="form-group row mt-4">
+            <label asp-for="IdFormaPagamento" class="col-sm-2 col-form-label h5"></label>
+            <div class="col-sm-10">
+                @*<select asp-for="IdFormaPagamento" class="form-control" onchange="javascript:mostraAlerta(this);" asp-items="ViewBag.FormaPagamento" name="IdFormaPagamento" id="IdFormaPagamento">
+                    <option selected="selected">Selecione a forma de pagamento</option>
+                </select>*@
+                <select asp-for="FormaPagamento" onchange="javascript:mostraAlerta(this);">
+                    <option selected="selected">Selecione a forma de pagamento</option>
+                    <option value="Dinheiro">Dinheiro</option>
+                    <option value="PIX">PIX</option>
+                    <option value="Cartao de credito">Cartão de credito</option>
+                    <option value="Cartao de debito">Cartão de debito</option>
+                </select>
+                <span asp-validation-for="IdFormaPagamento" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div id="InputPix">
+
+        </div>
+        
+        <div class="form-group d-flex justify-content-center mt-3">
+            <a asp-action="Abertos" class="btn btn-secondary m-3 mt-4">CANCELAR</a>
+            <a asp-action="Index" class="btn btn-danger m-3 mt-4">EXCLUIR</a>
+            <a asp-action="GerarQrCode" class="btn btn-danger m-3 mt-4">QRCODE</a>
+            <input type="submit" value="FECHAR" class="btn btn-success m-3 mt-4" />               
+        </div>
+
+    </form>
+</div>
+
+        
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#FormaPagamento").chosen({ width: "100%" });
+            $('#valor').maskMoney({
+               decimal: ","
+            });
+        });
+        function mostraAlerta(elemento)
+        {
+            if (elemento.value == "PIX") 
+            {
+                $("#InputPix").show();
+            }
+            window.alert(elemento.value);
+        }
+    </script>
+}

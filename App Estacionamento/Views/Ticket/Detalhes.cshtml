@@ -1,0 +1,96 @@
+﻿@model App_Estacionamento.Models.Ticket
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cliente)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cliente)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Placa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Veiculo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Veiculo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Valor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ValorTotal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Desconto)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Desconto)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Entrada)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Entrada)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Saida)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Saida)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Tempo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Tempo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FormaPagamento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FormaPagamento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ObservacaoTicket)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ObservacaoTicket)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pago)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pago)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Pagamento", "Pagamento", new { id = Model.Id }, new { @class = "btn btn-success p-1 m-1 btn-block" })
+    <a asp-action="Abertos">Voltar</a>
+</div>

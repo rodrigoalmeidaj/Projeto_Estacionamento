@@ -1,0 +1,88 @@
+﻿@model IEnumerable<App_Estacionamento.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Clientes";
+}
+<br />
+
+<div class="text-center">
+    <h1>Clientes</h1>
+</div>
+<br />
+<table id="myTable" class="table table-striped table-hover">
+    <br />
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>            
+            <th>
+                @Html.DisplayNameFor(model => model.Telefone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Logradouro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Veiculo)
+            </th>          
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Logradouro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Veiculo)
+            </td>           
+            <td>
+                @Html.ActionLink("Editar", "EditarCliente", new { id = item.Id }, new { @class = "btn btn-secondary p-1 m-1 btn-block" })
+                @Html.ActionLink("Detalhes", "DetalhesCliente", new { id = item.Id }, new { @class = "btn btn-primary p-1 m-1 btn-block" })
+                @Html.ActionLink("Excluir", "ExcluirCliente", new { id=item.Id }, new { @class = "btn btn-danger p-1 m-1 btn-block" })
+             </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div class="form-group d-flex justify-content-center col-md-10 offset-md-6">
+    <a asp-action="IncluirCliente" class="btn btn-outline-primary m-3 mt-4">NOVO CLIENTE</a>    
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#myTable').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.12.0/i18n/pt-BR.json"
+                },
+                "lengthMenu": [[25, 50, -1], [25, 50, "All"]]
+            });
+        });
+    </script>
+}

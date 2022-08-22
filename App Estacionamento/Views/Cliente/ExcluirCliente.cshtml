@@ -1,0 +1,80 @@
+﻿@model App_Estacionamento.Models.Cliente
+
+@{
+    ViewData["Title"] = "Excluir cliente";
+}
+<br />
+<h1>Excluir cliente</h1>
+
+<h3>Tem certeza de que deseja excluir ?</h3>
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Cpf)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Cpf)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nascimento)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nascimento)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Logradouro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Logradouro)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numero)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numero)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Veiculo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Veiculo)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+    </dl>
+    
+    <form asp-action="BtnExcluirCliente">
+        <input type="submit" value="Excluir" class="btn btn-danger" /> |
+        <a asp-action="ListarClientes">Voltar</a>
+    </form>
+</div>
